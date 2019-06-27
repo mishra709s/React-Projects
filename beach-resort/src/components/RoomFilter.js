@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from "react";
 import { RoomContext } from "../context";
-import Title from "./Title";
+import Title from "../components/Title";
 
-// get all uniquue values
+// get all unique values
 const getUnique = (items, value) => {
   return [...new Set(items.map(item => item[value]))];
 };
@@ -50,7 +50,7 @@ export default function RoomFilter({ rooms }) {
     <section className="filter-container">
       <Title title="Search Rooms" />
       <form className="filter-form">
-        {/* Select Type */}
+        {/* Select Room Type */}
         <div className="form-group">
           <label htmlFor="type">Room Type</label>
           <select
@@ -63,7 +63,7 @@ export default function RoomFilter({ rooms }) {
             {types}
           </select>
         </div>
-        {/* End of select type */}
+        {/* End of Select Room Type */}
 
         {/* Guests */}
         <div className="form-group">
@@ -130,17 +130,17 @@ export default function RoomFilter({ rooms }) {
             />
             <label htmlFor="breakfast">Breakfast</label>
           </div>
-        </div>
-        <div className="form-group">
-          <div className="single-extra">
-            <input
-              type="checkbox"
-              name="pets"
-              id="pets"
-              checked={pets}
-              onChange={handleChange}
-            />
-            <label htmlFor="pets">Pets</label>
+          <div className="form-group">
+            <div className="single-extra">
+              <input
+                type="checkbox"
+                name="pets"
+                id="pets"
+                checked={pets}
+                onChange={handleChange}
+              />
+              <label htmlFor="pets">Pets</label>
+            </div>
           </div>
         </div>
         {/* End of Extras */}
